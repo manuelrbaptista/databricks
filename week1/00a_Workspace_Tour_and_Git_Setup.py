@@ -1,4 +1,8 @@
 # Databricks notebook source
+# /// script
+# [tool.databricks.environment]
+# environment_version = "6"
+# ///
 # MAGIC %md
 # MAGIC # 00a · Workspace Tour, Compute and Git Setup
 # MAGIC
@@ -29,7 +33,7 @@
 # COMMAND ----------
 
 # Who am I and what am I running on?
-print("User         :", spark.sql("SELECT current_user()").first()[0])
+print("User:", spark.sql("SELECT current_user()").first()[0])
 print("Spark version:", spark.version)
 
 # COMMAND ----------
@@ -81,6 +85,11 @@ except Exception as e:
 # MAGIC 1. Click **SQL Editor** → choose the **Serverless Starter Warehouse**
 # MAGIC 2. Run: `SELECT pickup_zip, COUNT(*) AS trips FROM samples.nyctaxi.trips GROUP BY pickup_zip ORDER BY trips DESC LIMIT 10`
 # MAGIC 3. Same result as a `%sql` cell in a notebook: the notebook uses *serverless notebook compute*, the editor uses a *SQL warehouse*.
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select * from samples.nyctaxi.trips
 
 # COMMAND ----------
 

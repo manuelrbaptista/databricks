@@ -1,4 +1,8 @@
 # Databricks notebook source
+# /// script
+# [tool.databricks.environment]
+# environment_version = "6"
+# ///
 # MAGIC %md
 # MAGIC # 01 · Python & PySpark Basics
 # MAGIC
@@ -93,6 +97,17 @@ for p in products:
 # List comprehension: a compact for-loop that builds a list
 upper_products = [p.upper() for p in products]
 print(upper_products)
+
+# COMMAND ----------
+
+def soma(a, b):
+    if type(a) != int:
+        raise ValueError("A soma só aceita números inteiros")
+    elif type(b) != int:
+        raise ValueError("A soma só aceita números inteiros")
+    return a + b
+
+print(soma(1, 2))
 
 # COMMAND ----------
 
